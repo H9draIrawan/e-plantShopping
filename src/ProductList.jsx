@@ -283,6 +283,7 @@ function ProductList({ onHomeClick }) {
 
 	const handleHomeClick = (e) => {
 		e.preventDefault();
+		setShowCart(false);
 		onHomeClick();
 	};
 
