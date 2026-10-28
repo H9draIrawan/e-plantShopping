@@ -14,11 +14,6 @@ export const CartSlice = createSlice({
       } else {
         state.items.push({ name, image, cost, quantity: 1 });
       }
-      const calculateTotalQuantity = () => {
-        return CartItems
-          ? CartItems.reduce((total, item) => total + item.quantity, 0)
-          : 0;
-      };
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.name !== action.payload);
