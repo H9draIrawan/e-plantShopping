@@ -287,13 +287,9 @@ function ProductList({ onHomeClick }) {
 		onHomeClick();
 	};
 
-	const handleParadiseNurseyClick = (e) => {
-		handleHomeClick(e);
-	};
-
 	const handleCartClick = (e) => {
 		e.preventDefault();
-		setShowCart(true);
+		setShowCart(true); // Set showCart to true when cart icon is clicked
 	};
 	const handlePlantsClick = (e) => {
 		e.preventDefault();
@@ -310,15 +306,15 @@ function ProductList({ onHomeClick }) {
 	};
 	return (
 		<div>
-			<nav className="navbar" style={styleObj} aria-label="Main navigation">
+			<div className="navbar" style={styleObj}>
 				<div className="tag">
 					<div className="luxury">
 						<img
 							src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png"
 							alt=""
 						/>
-						<a href="/" onClick={handleParadiseNurseyClick}>
-							<div>
+						<a href="/" onClick={(e) => handleHomeClick(e)}>
+							<div aria-label="Paradise Nursery home">
 								<h3 style={{ color: "white" }}>Paradise Nursery</h3>
 								<i style={{ color: "white" }}>Where Green Meets Serenity</i>
 							</div>
@@ -327,17 +323,17 @@ function ProductList({ onHomeClick }) {
 				</div>
 				<div style={styleObjUl}>
 					<div>
-						<a href="/" onClick={handleHomeClick} style={styleA}>
+						<a href="/" onClick={(e) => handleHomeClick(e)} style={styleA}>
 							Home
 						</a>
 					</div>
 					<div>
-						<a href="#" onClick={handlePlantsClick} style={styleA}>
+						<a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>
 							Plants
 						</a>
 					</div>
 					<div>
-						<a href="#" onClick={handleCartClick} style={styleA}>
+						<a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
 							<h1 className="cart">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -366,7 +362,7 @@ function ProductList({ onHomeClick }) {
 						</a>
 					</div>
 				</div>
-			</nav>
+			</div>
 			{!showCart ? (
 				<div className="product-grid">
 					{plantsArray.map((category, index) => (
