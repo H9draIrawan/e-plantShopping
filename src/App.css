@@ -125,28 +125,34 @@
 		align-items: center;
 		width: 100vw;
 		height: 100vh;
+		top: 0;
+		justify-content: flex-start;
+		overflow-y: auto;
 	}
 
 	.landing_content {
-		margin-top: 100px; /* Adjust as needed */
+		height: auto;
+		min-height: 0;
+		margin-top: 0;
 		margin-left: 0;
-		width: 80%; /* Adjust as needed */
+		padding: 24px 0 12px;
+		transform: none;
+		width: 80%;
 		text-align: center;
 	}
 
 	.aboutus_container {
-		margin-top: 20px; /* Adjust as needed */
-		width: 80%; /* Adjust as needed */
+		margin: 8px 0 28px;
+		width: 80%;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	.landing_content {
-		margin-top: 50px; /* Adjust as needed */
-		width: 90%; /* Adjust as needed */
+		width: 90%;
 	}
 
 	.aboutus_container {
-		width: 90%; /* Adjust as needed */
+		width: 90%;
 	}
 }
